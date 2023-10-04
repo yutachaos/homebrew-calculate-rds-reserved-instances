@@ -5,20 +5,20 @@
 class CalculateRdsReservedInstances < Formula
   desc "Calculate the number and price of rds reserved instances"
   homepage "https://github.com/yutachaos/calculate-rds-reserved-instances"
-  version "0.0.1"
+  version "0.0.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/yutachaos/calculate-rds-reserved-instances/releases/download/v0.0.1/calculate-rds-reserved-instances_0.0.1_darwin_arm64.zip"
-      sha256 "a9029d92edbc0251c33c1448510e53cf00988c7499af8b383fd63b66f22278d7"
+    if Hardware::CPU.intel?
+      url "https://github.com/yutachaos/calculate-rds-reserved-instances/releases/download/v0.0.2/calculate-rds-reserved-instances_0.0.2_darwin_amd64.zip"
+      sha256 "4b99934d4b9f57ccdc66d926b8a770484307e62fd58b089d2f21cd4ca79ce347"
 
       def install
         bin.install Dir['calculate-rds-reserved-instances']
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/yutachaos/calculate-rds-reserved-instances/releases/download/v0.0.1/calculate-rds-reserved-instances_0.0.1_darwin_amd64.zip"
-      sha256 "c2a912e044348cc033df9e7f039105339d4788e03dae7728717eae77b5f65848"
+    if Hardware::CPU.arm?
+      url "https://github.com/yutachaos/calculate-rds-reserved-instances/releases/download/v0.0.2/calculate-rds-reserved-instances_0.0.2_darwin_arm64.zip"
+      sha256 "ef3238fdc6c3a4c14b546b73e327eb70d8fe195d73bd5ed322f2fd805f6a4743"
 
       def install
         bin.install Dir['calculate-rds-reserved-instances']
@@ -27,25 +27,25 @@ class CalculateRdsReservedInstances < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/yutachaos/calculate-rds-reserved-instances/releases/download/v0.0.1/calculate-rds-reserved-instances_0.0.1_linux_armv6.zip"
-      sha256 "3d915a97b7bf6c4dcd74af39489cdbf2297afc7b92dd396066b1bd9dee4f4ede"
+    if Hardware::CPU.intel?
+      url "https://github.com/yutachaos/calculate-rds-reserved-instances/releases/download/v0.0.2/calculate-rds-reserved-instances_0.0.2_linux_amd64.zip"
+      sha256 "e5d2f60e3593de9ef3e4f8affe94e1f1eb573415201604b50fe2cd25df0b6b1c"
 
       def install
         bin.install Dir['calculate-rds-reserved-instances']
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/yutachaos/calculate-rds-reserved-instances/releases/download/v0.0.1/calculate-rds-reserved-instances_0.0.1_linux_arm64.zip"
-      sha256 "2c9cfcf4c34b0bd8469f23935ceb5d37b1400b3c29ae435a72da454403e3207b"
+      url "https://github.com/yutachaos/calculate-rds-reserved-instances/releases/download/v0.0.2/calculate-rds-reserved-instances_0.0.2_linux_arm64.zip"
+      sha256 "21020b7d378b381e40ac3d979adb2181d77f18931b8df8e5c4416607c489466f"
 
       def install
         bin.install Dir['calculate-rds-reserved-instances']
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/yutachaos/calculate-rds-reserved-instances/releases/download/v0.0.1/calculate-rds-reserved-instances_0.0.1_linux_amd64.zip"
-      sha256 "4bdc0fa890297ef090a2517d24e4c9476c7819ca5b5e1138bd34463e6577a119"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/yutachaos/calculate-rds-reserved-instances/releases/download/v0.0.2/calculate-rds-reserved-instances_0.0.2_linux_armv6.zip"
+      sha256 "2c8100012f0c9b559c2f8c5f99187d08593ac0c939f33c1df213d0327754cfb8"
 
       def install
         bin.install Dir['calculate-rds-reserved-instances']
